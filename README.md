@@ -1,4 +1,6 @@
-# Ideas Factory App is web based application built based on ASP.Net MVC and using vue is javascript framework for fly render card u,
+# Ideas Factory App
+
+Idea Factory App is web based application built based on ASP.Net MVC and using vue is javascript framework for fly render card u,
 Vue used since it is light is library and this will tune App performance, 
 
 
