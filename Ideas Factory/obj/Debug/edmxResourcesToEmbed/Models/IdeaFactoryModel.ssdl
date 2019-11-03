@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ideasFacctoryDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ideas">
+    <Key>
+      <PropertyRef Name="idea_id" />
+    </Key>
+    <Property Name="idea_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idea_title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idea_description" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="idea_creation_time" Type="datetime" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="loginuser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ideas_Tologinuser">
+    <End Role="loginuser" Type="Self.loginuser" Multiplicity="1" />
+    <End Role="ideas" Type="Self.ideas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="loginuser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ideas">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ideasFacctoryDBModelStoreContainer">
+    <EntitySet Name="ideas" EntityType="Self.ideas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loginuser" EntityType="Self.loginuser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ideas_Tologinuser" Association="Self.FK_ideas_Tologinuser">
+      <End Role="loginuser" EntitySet="loginuser" />
+      <End Role="ideas" EntitySet="ideas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

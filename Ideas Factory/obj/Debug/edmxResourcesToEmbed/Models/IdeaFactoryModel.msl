@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ideasFacctoryDBModelStoreContainer" CdmEntityContainer="ideasFacctoryDBEntities">
+    <EntitySetMapping Name="ideas">
+      <EntityTypeMapping TypeName="ideasFacctoryDBModel.idea">
+        <MappingFragment StoreEntitySet="ideas">
+          <ScalarProperty Name="idea_id" ColumnName="idea_id" />
+          <ScalarProperty Name="idea_title" ColumnName="idea_title" />
+          <ScalarProperty Name="idea_description" ColumnName="idea_description" />
+          <ScalarProperty Name="idea_creation_time" ColumnName="idea_creation_time" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loginusers">
+      <EntityTypeMapping TypeName="ideasFacctoryDBModel.loginuser">
+        <MappingFragment StoreEntitySet="loginuser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
