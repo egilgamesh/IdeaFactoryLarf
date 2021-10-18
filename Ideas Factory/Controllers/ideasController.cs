@@ -38,7 +38,7 @@ namespace Ideas_Factory.Controllers
                     username = ide.loginuser.username
                 });
             }
-            return response; //Here CityName is not virtual so will not cause exception. 
+            return response; 
         }
 
         // GET: api/ideas/5
